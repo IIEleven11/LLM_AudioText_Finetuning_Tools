@@ -7,9 +7,8 @@ from pydub import AudioSegment
 audio_dir = "path/to/audio/files"
 
 # Define the path to the output directory
-output_dir = "pth/to/output/directory"
+output_dir = "path/to/output/directory"
 
-# Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
 
