@@ -1,4 +1,4 @@
-# Creates the XTTSv2 Metadata files for training and evaluation
+# Creates the XTTSv2 Metadata files for training and evaluation from the srtsegmenter output format. (the output.txt)
 
 import os
 import random
