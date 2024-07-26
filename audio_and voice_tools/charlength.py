@@ -1,3 +1,6 @@
+# finds transcriptions that go over the standard 250 char length. Most voice models have this same stipulation. it will then remove them and output their metadata to a third csv.
+# necessary header for csv is audio_file|text|speaker_name
+
 import csv
 import os
 
