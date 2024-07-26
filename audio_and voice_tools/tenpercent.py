@@ -1,4 +1,4 @@
-#make the metadata_eval set
+# take a metadata.csv and seperates 10% of it to leave you with the metadata_eval and train csvs for xttsv2 
 
 import pandas as pd
 import numpy as np
