@@ -1,10 +1,10 @@
+#replaces the third column of a pipe delimted csv audio_file|text|speaker_name to whatever you want. in this case i used "coqui"
+
 import csv
 
-# Define the input and output file paths
-input_file_path = r"C:\Users\jakem\Downloads\dataset\trainingdata\output.csv"
-output_file_path = (
-    r"C:\Users\jakem\Downloads\dataset\trainingdata\outmetadata_train_modified.csv"
-)
+# Define the input and output file paths. 
+input_file_path = r"C:\dataset\trainingdata\output.csv"
+output_file_path = (r"C:\trainingdata\outmetadata_train_modified.csv")
 
 # Open the input file for reading and the output file for writing
 with open(input_file_path, "r", newline="") as infile, open(
