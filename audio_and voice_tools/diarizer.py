@@ -1,3 +1,5 @@
+# diarizers are mediocre at best. This implementation is no different. Use at your own risk
+
 import json
 from pydub import AudioSegment
 
@@ -5,7 +7,6 @@ from pydub import AudioSegment
 audio_path = r"path\to\wav\.wav"
 json_path = r"path\to\json\.json"
 
-# Load the audio file
 audio = AudioSegment.from_wav(audio_path)
 
 import json
@@ -22,11 +23,11 @@ def time_to_milliseconds(time_str):
     return int(total_seconds * 1000)
 
 
-# Load the JSON file
+
 with open("output.json", "r") as file:
     data = json.load(file)
 
-# Process each segment
+
 for segment in data["segments"]:
     start_time = time_to_milliseconds(segment["start"])
     stop_time = time_to_milliseconds(segment["stop"])
