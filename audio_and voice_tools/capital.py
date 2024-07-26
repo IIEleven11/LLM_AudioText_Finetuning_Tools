@@ -1,9 +1,10 @@
-# capitalize metadata properly (hopefully)
+# capitalize metadata properly (hopefully). This assumes you used the validation.py script which has a third column that isnt speaker_name
 import csv
 import nltk
 
-input_csv = '/home/eleven/alltalk/mismatches_output.csv'
-output_csv = '/home/eleven/alltalk/mismatches_output_grammar_capitalized.csv'
+# put your paths in
+input_csv = '/home/eleven/mismatches_output.csv'
+output_csv = '/home/eleven/mismatches_output_grammar_capitalized.csv'
 
 def capitalize_text(text):
     sentences = nltk.sent_tokenize(text)
