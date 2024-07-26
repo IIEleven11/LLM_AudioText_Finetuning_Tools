@@ -2,8 +2,8 @@
 
 import csv
 
-input_file = '/home/eleven/alltalk/alltalk_tts/finetune/Calypso_7_25/metadata_eval.csv'
-output_file = '/home/eleven/alltalk/alltalk_tts/finetune/Calypso_7_25/metadata_eval_modified.csv'
+input_file = 'path/to/metadata_eval.csv then also do the path/to/metadata_train.csv'
+output_file = 'path/to/metadata_eval/train_modified.csv'
 
 with open(input_file, 'r', newline='', encoding='utf-8') as infile, \
      open(output_file, 'w', newline='', encoding='utf-8') as outfile:
@@ -12,9 +12,7 @@ with open(input_file, 'r', newline='', encoding='utf-8') as infile, \
     writer = csv.writer(outfile, delimiter='|')
     
     for row in reader:
-        # Append .wav to the first column
         row[0] = row[0] + '.wav'
-        # Write the modified row to the output file
         writer.writerow(row)
 
 print(f"Modified CSV has been saved to {output_file}")
