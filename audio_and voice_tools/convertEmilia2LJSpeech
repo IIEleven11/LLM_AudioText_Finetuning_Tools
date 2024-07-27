@@ -1,0 +1,37 @@
+# Script that converts the Emilia Pipe Dataset generator into metadata.csv/Ljspeech format. Youll need the folder of jsons.
+
+import json
+import csv
+import os
+
+
+def json_to_csv(json_folder, csv_file):
+    # Open the CSV file for writing
+    with open(csv_file, "w", newline="", encoding="utf-8") as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter="|")
+
+        # Write the header
+        csvwriter.writerow(["audio_file", "text", "speaker_name"])
+
+        # Iterate over all JSON files in the specified folder
+        for json_file in os.listdir(json_folder):
+            if json_file.endswith(".json"):
+                json_path = os.path.join(json_folder, json_file)
+                base_name = os.path.splitext(json_file)[0]
+
+                # Read the JSON data
+                with open(json_path, "r") as f:
+                    data = json.load(f)
+
+                # Write the data
+                for i, entry in enumerate(data, start=1):
+                    audio_file = f"{base_name}_{i}.wav"
+                    text = entry.get("text", "")
+                    speaker_name = entry.get("speaker", "")
+                    csvwriter.writerow([audio_file, text, speaker_name])
+
+
+# Example usage
+json_folder = "path/to/jsons" # put your path here paco
+csv_file = "metadata.csv"
+json_to_csv(json_folder, csv_file)
